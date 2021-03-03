@@ -1,0 +1,224 @@
+$cWhite: white;
+$cBlack: black;
+
+#container {
+  text-align: center;
+}
+#container2 {
+  text-align: center;
+}
+#container3 {
+  text-align: center;
+}
+#container4{
+  text-align: center;
+}
+
+.btn {
+  background-color: $cWhite;
+  color: $cBlack;
+  border: 1px solid $cBlack;
+  padding: 10px 40px;
+  margin: 50px 0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &.cover-3d {
+    position: relative;
+    overflow: hidden;
+    z-index: 100;
+    //3dの設定には必ず以下2つの設定が必要
+    transform-style: preserve-3d;
+    perspective: 300px;
+
+    & span {
+      transform: translateZ(20px);
+    }
+
+
+    //は要素の後、afterは前
+    &::before {
+      // 擬似要素は必ずcontent '';が必要
+      content: '';
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      background-color: $cBlack;
+      position: absolute;
+      top: 0;
+      left: 0;
+      //上,手前から降りてくる
+      transform: rotateX(90deg);
+      transition: all 0.5s;
+      transform-origin: top center;
+      z-index: -100;
+      opacity: 0;
+    }
+    &:hover {
+      color: $cWhite;
+
+      &::before {
+        transform: none;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+.btn2 {
+  background-color: $cWhite;
+  color: $cBlack;
+  border: 1px solid $cBlack;
+  padding: 10px 40px;
+  margin: 50px 0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &.cover-3d-2 {
+    position: relative;
+    overflow: hidden;
+    z-index: 100;
+    //3dの設定には必ず以下2つの設定が必要
+    transform-style: preserve-3d;
+    perspective: 300px;
+
+    & span {
+      transform: translateZ(20px);
+    }
+
+
+    //は要素の後、afterは前
+    &::before {
+      // 擬似要素は必ずcontent '';が必要
+      content: '';
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      background-color: red;
+      position: absolute;
+      top: 0;
+      left: 0;
+      //上,手前から降りてくる
+      transform: rotateY(90deg);
+      transition: all 0.5s;
+      transform-origin: top center;
+      z-index: -100;
+      opacity: 0;
+    }
+    &:hover {
+      color: $cWhite;
+
+      &::before {
+        transform: none;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.btn3 {
+  background-color: $cWhite;
+  color: $cBlack;
+  border: 1px solid $cBlack;
+  padding: 10px 40px;
+  margin: 50px 0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &.cover-3d-3 {
+    position: relative;
+    overflow: hidden;
+    z-index: 100;
+    //3dの設定には必ず以下2つの設定が必要
+    transform-style: preserve-3d;
+    perspective: 300px;
+
+    & span {
+      transform: translateZ(20px);
+    }
+
+
+    //は要素の後、afterは前
+    &::before {
+      // 擬似要素は必ずcontent '';が必要
+      content: '';
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      background-color: aqua;
+      position: absolute;
+      top: 0;
+      left: 0;
+      //上,手前から降りてくる
+      transform: rotateZ(90deg);
+      transition: all 0.5s;
+      transform-origin: top center;
+      z-index: -100;
+      opacity: 0;
+    }
+    &:hover {
+      color: $cWhite;
+
+      &::before {
+        transform: none;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.btn4{
+  position: relative;
+  display: inline-block;
+  transform-style: preserve-3d;
+  perspective: 300px;
+  width: 150px;
+  height: 50px;
+  margin: 0 auto;
+  cursor: pointer;
+
+  &.cubic{
+
+    & span{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 1px solid $cBlack;
+      line-height: 48px;
+      text-align: center;
+      transition: all 2s;
+    }
+
+    & .hovering{
+      background-color: $cBlack;
+      color: $cWhite;
+      transform: rotateX(90deg);
+      transform-origin: center center -25px;
+    }
+
+    & .default{
+      background-color: $cWhite;
+      color: $cBlack;
+      transform: rotateX(0);
+      transform-origin: center center -25px;
+    }
+
+    &:hover{
+      & .hovering{
+        transform: rotateX(0deg);
+      }
+      & .default{
+        transform: rotateX(-90deg);
+      }
+    }
+  }
+}
+
+
+
